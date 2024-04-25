@@ -55,70 +55,70 @@
 
 ## kiek buvo išleista kiekvieną mėnesį?
 
-# islaidos01 = 0
-# islaidos02 = 0
-# islaidos03 = 0
-# islaidos04 = 0
-# with open('sampleData.csv', encoding='utf8') as file:
-#     lines = file.read().split('\n')[1:]
-#     for line in lines:
-#         line = line.replace('"','')
-#         if line.split(',')[7] == 'D':
-#             year = line.split(',')[2]
-#             month = year[5:7]
-#             # print(month)
-#             if month == '01':
-#                 islaidos01 += float(line.split(',')[5])
-#             elif month == '02':
-#                 islaidos02 += float(line.split(',')[5])
-#             elif month == '03':
-#                 islaidos03 += float(line.split(',')[5])
-#             elif month == '04':
-#                 islaidos04 += float(line.split(',')[5])
-#
-#     print("Islaidos uz sausi:", islaidos01)
-#     print("Islaidos uz vasari:", islaidos02)
-#     print("Islaidos uz kova:", islaidos03)
-#     print("Islaidos uz balandi:", islaidos04)
+islaidos01 = 0
+islaidos02 = 0
+islaidos03 = 0
+islaidos04 = 0
+with open('sampleData.csv', encoding='utf8') as file:
+    lines = file.read().split('\n')[1:]
+    for line in lines:
+        line = line.replace('"','')
+        if line.split(',')[7] == 'D':
+            year = line.split(',')[2]
+            month = year[5:7]
+            # print(month)
+            if month == '01':
+                islaidos01 += float(line.split(',')[5])
+            elif month == '02':
+                islaidos02 += float(line.split(',')[5])
+            elif month == '03':
+                islaidos03 += float(line.split(',')[5])
+            elif month == '04':
+                islaidos04 += float(line.split(',')[5])
 
-# kiek buvo uždirbta kiekvieną mėnesį?
-#
-# pajamos01 = 0
-# pajamos02 = 0
-# pajamos03 = 0
-# pajamos04 = 0
-# with open('sampleData.csv', encoding='utf8') as file:
-#     lines = file.read().split('\n')[1:]
-#     for line in lines:
-#         line = line.replace('"','')
-#         if line.split(',')[7] == 'K':
-#             year = line.split(',')[2]
-#             month = year[5:7]
-#             # print(month)
-#             if month == '01':
-#                 pajamos01 += float(line.split(',')[5])
-#             elif month == '02':
-#                 pajamos02 += float(line.split(',')[5])
-#             elif month == '03':
-#                 pajamos03 += float(line.split(',')[5])
-#             elif month == '04':
-#                 pajamos04 += float(line.split(',')[5])
-#
-#     print("Islaidos uz sausi:", pajamos01)
-#     print("Islaidos uz vasari:", pajamos02)
-#     print("Islaidos uz kova:", pajamos03)
-#     print("Islaidos uz balandi:", pajamos04)
+    print("Islaidos uz sausi:", islaidos01)
+    print("Islaidos uz vasari:", islaidos02)
+    print("Islaidos uz kova:", islaidos03)
+    print("Islaidos uz balandi:", islaidos04)
+
+## kiek buvo uždirbta kiekvieną mėnesį?
+
+pajamos01 = 0
+pajamos02 = 0
+pajamos03 = 0
+pajamos04 = 0
+with open('sampleData.csv', encoding='utf8') as file:
+    lines = file.read().split('\n')[1:]
+    for line in lines:
+        line = line.replace('"','')
+        if line.split(',')[7] == 'K':
+            year = line.split(',')[2]
+            month = year[5:7]
+            # print(month)
+            if month == '01':
+                pajamos01 += float(line.split(',')[5])
+            elif month == '02':
+                pajamos02 += float(line.split(',')[5])
+            elif month == '03':
+                pajamos03 += float(line.split(',')[5])
+            elif month == '04':
+                pajamos04 += float(line.split(',')[5])
+
+    print("Pajamos uz sausi:", pajamos01)
+    print("Pajamos uz vasari:", pajamos02)
+    print("Pajamos uz kova:", pajamos03)
+    print("Pajamos uz balandi:", pajamos04)
 
 ## koks pinigų likutis kiekvieno mėnesio gale? (sausio pradžioje likutis buvo 0.00)(ignoruojant valiutas)
 
-# sausis = pajamos01 - islaidos01
-# vasaris = sausis + pajamos02 - islaidos02
-# kovas = vasaris + pajamos03 - islaidos03
-# balandis = kovas + pajamos04 - islaidos04
-# print('Pinigu likutis sausio pabaigoje:',sausis) ## 1209.5
-# print('Pinigu likutis vasario pabaigoje:',vasaris) ## 2640.5
-# print('Pinigu likutis kovo pabaigoje:',kovas) ## 3872.0
-# print('Pinigu likutis balandzio pabaigoje:',balandis) ## 4860.51
+sausis = pajamos01 - islaidos01
+vasaris = sausis + pajamos02 - islaidos02
+kovas = vasaris + pajamos03 - islaidos03
+balandis = kovas + pajamos04 - islaidos04
+print('Pinigu likutis sausio pabaigoje:',sausis) ## 1209.5
+print('Pinigu likutis vasario pabaigoje:',vasaris) ## 2640.5
+print('Pinigu likutis kovo pabaigoje:',kovas) ## 3872.0
+print('Pinigu likutis balandzio pabaigoje:',balandis) ## 4860.51
 
 
 ## koks pinigų likutis kiekvieno mėnesio gale? (sausio pradžioje likutis buvo 0.00)(ignoruojant valiutas)

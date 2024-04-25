@@ -137,4 +137,29 @@ print("--- 5 uzd ---")
 # failas5.close()
 
 print("--- 6 uzd ---")
+# failas6 = open('studentai.csv', 'w')
+# failas6.write("Jonas,25,180,9\n")
+# failas6.write("Ponas,27,181,8\n")
+# failas6.write("Vonas,22,186,7\n")
+# failas6.write("Zonas,21,187,8\n")
+# failas6.write("Konas,26,190,8\n")
+# failas6.write("Bonas,20,156,6")
+# failas6 = open('studentai.csv', 'r')
+# print(failas6.read())
+# failas6.close()
+
+amzius = []
+amzsuma = 0
+with open('studentai.csv') as failas6:
+    csv_reader = reader('studentai.csv')
+    lines = failas6.read().split('\n')
+    for line in lines:
+        # print(line.split(' - ')[0])
+        amzius.append(line.split(',')[1])
+        amzsuma += float(line.split(',')[1])
+        amzvidurkis = amzsuma / len(amzius)
+    print('Studentu amzius:', amzius)
+    print('Amziaus vidurkis:', amzvidurkis)
+
+
 

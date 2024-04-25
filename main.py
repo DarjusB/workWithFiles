@@ -49,7 +49,7 @@ print("--- 3 uzd ---")
 # failas3 = open('automobilai.txt', 'w')
 # failas3.write("Volvo;S60;2015;155000\n")
 # failas3.write("Audi;A3;2005;255000\n")
-# failas3.write("Audi;A7;2015;55000\n")
+# failas3.write("Audi;A7;2015;55000")
 #
 #
 # automobiliai = []
@@ -67,11 +67,74 @@ print("--- 3 uzd ---")
 # print(automobiliai)
 
 
-failas3 = open('automobilai.txt', 'w')
-failas3.write("Volvo;S60;2015;155000\n")
-failas3.write("Audi;A3;2005;255000\n")
-failas3.write("Audi;A7;2015;55000\n")
-for metai in failas3:
-    print(metai)
+# metai = []
+# totalsum = 0
+# count = 0
+# with open('automobilai.txt', 'r') as failas3:
+#     lines = failas3.read().split('\n')
+#     for line in lines:
+#         print(line.split(';')[2])
+#         metai.append(int(line.split(';')[2]))
+#         totalsum += int(line.split(';')[2])
+#         count += 1
+#         vidurkis = totalsum / len(metai)
+#     print(vidurkis)
 
-failas3.close()
+
+print("--- 4 uzd ---")
+from csv import reader, writer
+### Bazes kurimaas
+# failas4 = open('kainos.csv', 'w')
+# failas4.write("bananai - 2.99\n")
+# failas4.write("slyvos - 1.99\n")
+# failas4.write("braskes - 5.99\n")
+# failas4.write("kriausies - 4.99\n")
+# failas4.write("ananasai - 8.99")
+#
+# failas4.close()
+### Bazes analize
+# kaina = []
+# bendrasuma = 0
+# count = 0
+# with open('kainos.csv', 'r') as failas4:
+#     lines = failas4.read().split('\n')
+#     for line in lines:
+#         # print(line.split(' - ')[1])
+#         kaina.append(float(line.split(' - ')[1]))
+#         bendrasuma += float(line.split(' - ')[1])
+#         count += 1
+#         vidurkis = round(bendrasuma) / len(kaina)
+#     for itemcost in kaina:
+#         if itemcost > vidurkis:
+#             print(itemcost,"Brangus vaisius")
+#         else:
+#             print(itemcost,"Pigus vaisius")
+#
+#     print(f'Kainos vidurkis:', vidurkis, 'Eur')
+
+
+print("--- 5 uzd ---")
+# failas5 = open('statybos.csv', 'w')
+# failas5.write("plytos - 1 - Eur\n")
+# failas5.write("lentos - 2 - Eur\n")
+# failas5.write("vynis - 2 - Eur\n")
+# failas5.write("reples - 3 - Eur\n")
+# failas5.write("lempos - 5 - Eur\n")
+# failas5.write("laminatas - 20 - Eur\n")
+# failas5.close()
+
+# asortimentas = []
+# with open('statybos.csv') as failas5:
+#     csv_reader = reader('statybos.csv')
+#     lines = failas5.read().split('\n')
+#     for line in lines:
+#         # print(line.split(' - ')[0])
+#         asortimentas.append(line.split(' - ')[0])
+#     print(asortimentas)
+# print()
+# failas5 = open('statybos.csv', 'r')
+# print(failas5.read())
+# failas5.close()
+
+print("--- 6 uzd ---")
+

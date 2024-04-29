@@ -164,73 +164,77 @@ import csv
 #     print('Likutis balandzio pabaigoje:', likutis01+likutis02+likutis03+likutis04)
 
 # ## koks pinigų likutis kiekvieno mėnesio gale? (sausio pradžioje likutis buvo 0.00) pagal kiekvieną valiutą?
+#
+# likutiseur01 = 0
+# likutiseur02 = 0
+# likutiseur03 = 0
+# likutiseur04 = 0
+# likutisgbp01 = 0
+# likutisgbp02 = 0
+# likutisgbp03 = 0
+# likutisgbp04 = 0
+# with open('sampleData.csv', encoding='utf8') as file:
+#     lines = file.read().split('\n')[1:]
+#     for line in lines:
+#         line = line.replace('"', '')
+#         if line.split(',')[7] == 'D':
+#             if line.split(',')[6] == 'EUR':
+#                 year = line.split(',')[2]
+#                 month = year[5:7]
+#                 if month == '01':
+#                     likutiseur01 -= float(line.split(',')[5])
+#                 elif month == '02':
+#                     likutiseur02 -= float(line.split(',')[5])
+#                 elif month == '03':
+#                     likutiseur03 -= float(line.split(',')[5])
+#                 elif month == '04':
+#                     likutiseur04 -= float(line.split(',')[5])
+#             elif line.split(',')[6] == 'GBP':
+#                 year = line.split(',')[2]
+#                 month = year[5:7]
+#                 if month == '01':
+#                     likutisgbp01 -= float(line.split(',')[5])
+#                 elif month == '02':
+#                     likutisgbp02 -= float(line.split(',')[5])
+#                 elif month == '03':
+#                     likutisgbp03 -= float(line.split(',')[5])
+#                 elif month == '04':
+#                     likutisgbp04 -= float(line.split(',')[5])
+#
+#         elif line.split(',')[7] == 'K':
+#             if line.split(',')[6] == 'EUR':
+#                 year = line.split(',')[2]
+#                 month = year[5:7]
+#                 if month == '01':
+#                     likutiseur01 += float(line.split(',')[5])
+#                 elif month == '02':
+#                     likutiseur02 += float(line.split(',')[5])
+#                 elif month == '03':
+#                     likutiseur03 += float(line.split(',')[5])
+#                 elif month == '04':
+#                     likutiseur04 += float(line.split(',')[5])
+#             elif line.split(',')[6] == 'GBP':
+#                 year = line.split(',')[2]
+#                 month = year[5:7]
+#                 if month == '01':
+#                     likutisgbp01 += float(line.split(',')[5])
+#                 elif month == '02':
+#                     likutisgbp02 += float(line.split(',')[5])
+#                 elif month == '03':
+#                     likutisgbp03 += float(line.split(',')[5])
+#                 elif month == '04':
+#                     likutisgbp04 += float(line.split(',')[5])
+#
+#     print('Likutis eurais sausio pabaigoje:', likutiseur01)
+#     print('Likutis eurais vasario pabaigoje:', likutiseur01+likutiseur02)
+#     print('Likutis eurais kovo pabaigoje:', likutiseur01+likutiseur02+likutiseur03)
+#     print('Likutis eurais balandzio pabaigoje:', likutiseur01+likutiseur02+likutiseur03+likutiseur04)
+#     print()
+#     print('Likutis funtais sausio pabaigoje:', likutisgbp01)
+#     print('Likutis funtais vasario pabaigoje:', likutisgbp01 + likutisgbp02)
+#     print('Likutis funtais kovo pabaigoje:', likutisgbp01 + likutisgbp02 + likutisgbp03)
+#     print('Likutis funtais balandzio pabaigoje:', likutisgbp01 + likutisgbp02 + likutisgbp03 + likutisgbp04)
 
-likutiseur01 = 0
-likutiseur02 = 0
-likutiseur03 = 0
-likutiseur04 = 0
-likutisgbp01 = 0
-likutisgbp02 = 0
-likutisgbp03 = 0
-likutisgbp04 = 0
-with open('sampleData.csv', encoding='utf8') as file:
-    lines = file.read().split('\n')[1:]
-    for line in lines:
-        line = line.replace('"', '')
-        if line.split(',')[7] == 'D':
-            if line.split(',')[6] == 'EUR':
-                year = line.split(',')[2]
-                month = year[5:7]
-                if month == '01':
-                    likutiseur01 -= float(line.split(',')[5])
-                elif month == '02':
-                    likutiseur02 -= float(line.split(',')[5])
-                elif month == '03':
-                    likutiseur03 -= float(line.split(',')[5])
-                elif month == '04':
-                    likutiseur04 -= float(line.split(',')[5])
-            elif line.split(',')[6] == 'GBP':
-                year = line.split(',')[2]
-                month = year[5:7]
-                if month == '01':
-                    likutisgbp01 -= float(line.split(',')[5])
-                elif month == '02':
-                    likutisgbp02 -= float(line.split(',')[5])
-                elif month == '03':
-                    likutisgbp03 -= float(line.split(',')[5])
-                elif month == '04':
-                    likutisgbp04 -= float(line.split(',')[5])
 
-        elif line.split(',')[7] == 'K':
-            if line.split(',')[6] == 'EUR':
-                year = line.split(',')[2]
-                month = year[5:7]
-                if month == '01':
-                    likutiseur01 += float(line.split(',')[5])
-                elif month == '02':
-                    likutiseur02 += float(line.split(',')[5])
-                elif month == '03':
-                    likutiseur03 += float(line.split(',')[5])
-                elif month == '04':
-                    likutiseur04 += float(line.split(',')[5])
-            elif line.split(',')[6] == 'GBP':
-                year = line.split(',')[2]
-                month = year[5:7]
-                if month == '01':
-                    likutisgbp01 += float(line.split(',')[5])
-                elif month == '02':
-                    likutisgbp02 += float(line.split(',')[5])
-                elif month == '03':
-                    likutisgbp03 += float(line.split(',')[5])
-                elif month == '04':
-                    likutisgbp04 += float(line.split(',')[5])
+# -- atvaizduokite per procentinę išraišką pamėnesiui pajamas ir išlaidas procentine išraiška
 
-    print('Likutis eurais sausio pabaigoje:', likutiseur01)
-    print('Likutis eurais vasario pabaigoje:', likutiseur01+likutiseur02)
-    print('Likutis eurais kovo pabaigoje:', likutiseur01+likutiseur02+likutiseur03)
-    print('Likutis eurais balandzio pabaigoje:', likutiseur01+likutiseur02+likutiseur03+likutiseur04)
-    print()
-    print('Likutis funtais sausio pabaigoje:', likutisgbp01)
-    print('Likutis funtais vasario pabaigoje:', likutisgbp01 + likutisgbp02)
-    print('Likutis funtais kovo pabaigoje:', likutisgbp01 + likutisgbp02 + likutisgbp03)
-    print('Likutis funtais balandzio pabaigoje:', likutisgbp01 + likutisgbp02 + likutisgbp03 + likutisgbp04)
